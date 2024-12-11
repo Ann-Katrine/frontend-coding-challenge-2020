@@ -12,7 +12,7 @@ export interface TopSalerScoreBoard{
 	saler: Array<TopSaler>
 }
 
-export const TopSalesView = (scoreboardInfo: TopSalerScoreBoard) => {
+export const TopSalesView = (scoreboardTopSaler: TopSalerScoreBoard) => {
 	return (
 		<>
 			<h2>Top sellers</h2>
@@ -24,10 +24,10 @@ export const TopSalesView = (scoreboardInfo: TopSalerScoreBoard) => {
 							<Table.Header>Value</Table.Header>
 						</Table.Headers>
 						<Table.Body>
-							{ scoreboardInfo.saler.length != 0 ? 
+							{ scoreboardTopSaler.saler.length != 0 ? 
 								<>
 									{/* Using the slice() to only show 10 element of the array   */}
-									{scoreboardInfo.saler.slice(0, 10).map((item) =>(
+									{scoreboardTopSaler.saler.slice(0, 10).map((item) => (
 										<>
 											<Table.Row key={item.name + item.id}>
 												<Table.Cell> {item.name} </Table.Cell>
