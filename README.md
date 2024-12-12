@@ -1,5 +1,15 @@
+## frontend-coding-challenge-2020
+In this coding-challenge, I used a total of 4 days to complete it. I did have a bit (maybe more) of a challenge with the setTimeout and the splash-modal.
 
-## Frontend Coding Challenge
+The challenge I faced with setTimeout was figuring out how it worked and how I could use it in the coding-challenge.
+
+The challenges with the splash-modal were how to get the data to show only one item at a time, while also ensuring that data not shown immediately would appear afterward.
+
+At the last moment, just 3 hours before I had to submit the challenge, I didn't like the design I had come up with for the splash-modal. So, I redesigned it again, this time with a different idea that I liked better. However, if anyone wants to see the old design, they can go back to commit 44e774963205e14cf79280462b98778085d2158c, named "splash notification work now."
+
+In conclusion, I think I did a good job on this coding-challenge.
+
+## The Challenge description 
 
 The aim of this task is to implement a dashboard leaderboard for a call center selling subscriptions to monthly cat magazines. The dashboard should continously update and react to new sales with splash screen notifications, by handling updates asynchonously.
 
