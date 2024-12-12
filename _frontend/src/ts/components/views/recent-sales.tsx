@@ -16,7 +16,7 @@ export interface RecentSalerScoreBoard{
 export const RecentSalesView = (scoreboardRecentSale: RecentSalerScoreBoard) => {
 	return (
 		<>
-			<h2>Recent Sales</h2>
+			<h2 className='text-xl'>Recent Sales</h2>
 			<Card>
 				<Card.InsetBody>
 					<Table>
@@ -26,7 +26,7 @@ export const RecentSalesView = (scoreboardRecentSale: RecentSalerScoreBoard) => 
 							<Table.Header>Price</Table.Header>
 						</Table.Headers>
 						<Table.Body>
-							{ scoreboardRecentSale.sale.length != 0 ? 
+							{ scoreboardRecentSale.sale.length != 0 &&
 								<>
 									{/* Using the slice() to only show 10 element of the array   */}
 									{/* using the reverse() to change the order of the element*/}
@@ -39,16 +39,17 @@ export const RecentSalesView = (scoreboardRecentSale: RecentSalerScoreBoard) => 
 											</Table.Row>
 										</>
 									))}
-								</> 
-								: 
-								<>
-									<Table.Row>
-										<p>There has not been found any sales in the system...</p>
-									</Table.Row>
 								</>
 							}
 						</Table.Body>
 					</Table>
+					{ scoreboardRecentSale.sale.length == 0 && 
+						<>
+							<p className='bg-zinc-50 text-center text-base'>
+								There has not been found any sales in the system...
+							</p>
+						</> 
+					}
 				</Card.InsetBody>
 			</Card>
 		</>

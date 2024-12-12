@@ -15,7 +15,7 @@ export interface TopSalerScoreBoard{
 export const TopSalesView = (scoreboardTopSaler: TopSalerScoreBoard) => {
 	return (
 		<>
-			<h2>Top sellers</h2>
+			<h2 className='text-xl'>Top sellers</h2>
 			<Card>
 				<Card.InsetBody>
 					<Table>
@@ -24,7 +24,7 @@ export const TopSalesView = (scoreboardTopSaler: TopSalerScoreBoard) => {
 							<Table.Header>Value</Table.Header>
 						</Table.Headers>
 						<Table.Body>
-							{ scoreboardTopSaler.saler.length != 0 ? 
+							{ scoreboardTopSaler.saler.length != 0 && 
 								<>
 									{/* Using the slice() to only show 10 element of the array   */}
 									{scoreboardTopSaler.saler.slice(0, 10).map((item) => (
@@ -36,16 +36,17 @@ export const TopSalesView = (scoreboardTopSaler: TopSalerScoreBoard) => {
 										</>
 									))}
 								
-								</> 
-								: 
-								<>
-									<Table.Row>
-										<p>There has not been found any sales in the system...</p>
-									</Table.Row>
 								</>
 							}
 						</Table.Body>
 					</Table>
+					{ scoreboardTopSaler.saler.length == 0 && 
+						<>
+							<p className='bg-zinc-50 text-center text-base'>
+								There has not been found any sales in the system...
+							</p>
+						</> 
+					}
 				</Card.InsetBody>
 			</Card>
 			
