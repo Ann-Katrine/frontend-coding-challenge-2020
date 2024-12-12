@@ -150,16 +150,17 @@ export const DashBoardView = () => {
 
 	return (
 		<>
-			<div className="flex-auto p-5">
-				<Header />
-				{mode === 'recent' ?
-					<RecentSalesView sale={salesDepartmentRecentSales.sale} />
-					: <TopSalesView saler={salesDepartmentTopSales.saler} />
-				}
-
+			<div className='flex flex-col'>
 				{saleNotification.sale.length != 0 && splash &&
 					<SplashModal id={saleNotification.sale[0]?.id} name={saleNotification.sale[0]?.name} price={saleNotification.sale[0]?.price} product={saleNotification.sale[0]?.product} />
 				}
+				<div className="p-5">
+					<Header />
+					{mode === 'recent' ?
+						<RecentSalesView sale={salesDepartmentRecentSales.sale} />
+						: <TopSalesView saler={salesDepartmentTopSales.saler} />
+					}
+				</div>
 			</div>
 		</>
 	)
