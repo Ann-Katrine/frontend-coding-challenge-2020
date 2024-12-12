@@ -43,8 +43,7 @@ export const DashBoardView = () => {
 			const timeOut = setTimeout(() => {
 				console.log('set to recent')
 				setMode('recent')
-			// }, 90000)
-			}, 1000)
+			}, 90000)
 		} else {
 			const timeOut = setTimeout(() => {
 				console.log('set to top')
@@ -53,6 +52,7 @@ export const DashBoardView = () => {
 		}
 	}, [mode])
 
+	// Add element to saleDeparmentRecentSale
 	function addSaleDepartmentRecentSales(user, product){
 		if(recentSalesArray.length == 0){ // only add if there is not any element in the array
 			recentSalesArray.push({id: user.id, name: user.name, price: product.unitPrice, product: product.name})
@@ -70,7 +70,7 @@ export const DashBoardView = () => {
 		})
 	}
 
-	// Add element to SalesDeparmentTopSales
+	// Add element to salesDeparmentTopSales
 	function addToSalesDeparmentTopSales(user, product){
 		if(topSalerArray.length == 0){ // only add if there is not any element in the array
 			topSalerArray.push({id: user.id, name: user.name, totalPrice: product.unitPrice})
@@ -79,7 +79,7 @@ export const DashBoardView = () => {
 			let sameName = false // To check the topSalerArray for already excited elements in the array
 			for (let i = 0; i < topSalerArray.length; i++) {
 				if(topSalerArray[i].name == user.name){
-					topSalerArray[i].totalPrice=+ product.unitPrice // Add the unitPrice to the already excited person with the same name
+					topSalerArray[i].totalPrice += product.unitPrice // Add the unitPrice to the already excited person with the same name
 					sameName = true
 				}
 			}
